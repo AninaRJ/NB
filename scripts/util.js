@@ -11,8 +11,20 @@ $(document).ready(function(){
 	$("#filterQuery").onEnter(function(){
 		if($("#filterQuery").val() != ""){
 			$("#filterResult").html("35 <b>Search Results</b> for \"" + $("#filterQuery").val() + "\"");
+			$(".resultContent").css("display", "block")
+			$(".filterCategories li").each(function(){
+				if($(this).html().indexOf('Todos') != -1
+					|| $(this).html().indexOf('Discussions') != -1
+					|| $(this).html().indexOf('Files') != -1)
+					{
+						$(this).find("input[type='checkbox']").prop("checked", true)
+					}
+			});
 		}
 	});
+	
+	$("#mainContainer").css("width", $(window).width())
+	$("#mainContainer").css("height", $(window).height())
 });
 
 (function($) {
