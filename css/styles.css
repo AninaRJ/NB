@@ -1,0 +1,106 @@
+html, body{
+	background-color: #f2f2f2;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#mainContainer{
+	height: 1000px;
+	width: 1340px;
+}
+
+.navigationMenu{
+	background-color: #333330;
+	width: 8%;
+	height: 100%;
+}
+
+.contentMenu{
+	width: 92%;
+	height: 100%;
+}
+
+.leftMenuTop{
+	background-color: #3cb1e6;
+	height: 4%;
+}
+
+.rightMenuTop{
+	background-color: #d8d8d8;
+	height: 4%;
+}
+
+.leftPanel{
+	float: left;
+}
+
+.rightPanel{
+	float: right;
+}
+
+.filterSummary{
+	vertical-align: middle;
+	padding: 8px;
+	height: 40px;
+	font-size: 18px;
+}
+
+.searchContainer{
+	height: 40px;
+	border: none;
+	background: #ffffff url(../images/search_magnifier.png) no-repeat scroll 7px 10px;
+	width: 92%;
+	margin: 5px 15px 5px 15px;
+	text-indent: 40px;
+	font-size: 18px;
+	color: gray;
+	font-weight: bold;
+}
+
+.filterCategories{
+	white-space: nowrap;
+	padding-left: 15px;
+}
+
+#filterResult{
+	padding-left: 10px;
+}
+
+.filterCategories li{
+	display: inline-block;
+	font-size: 14px;
+	padding: 0px 5px 0px 5px;
+}
+
+.filterCategories li input[type="checkbox"]:checked{
+	background-color: #3cb1e6 !important;
+}
+
+.resultContent{
+	background-color: #ffffff;
+	width: 92%;
+	margin: 5px 15px 5px 15px;
+}
+
+.navMenuList{
+	list-style-type: none;
+	padding: 0px;
+	margin-top: 0px;
+}
+
+.navMenuList li{
+	height:85px;
+	background: transparent url("../images/nav_delimit.png") no-repeat scroll 0px 83px;
+}
+
+.navMenuList li img{
+	padding: 11px 22px;
+}
+
+.navItemActive{
+	background: #ffffff url("../images/nav_delimit.png") no-repeat scroll 0px 85px !important;
+	border-left: 5px solid #16aa4a;
+}
+
+.navItemActive img{
+	padding: 11px 17px !important;
+}
