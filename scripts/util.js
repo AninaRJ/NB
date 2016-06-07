@@ -7,7 +7,7 @@ $(document).ready(function(){
 			$(this).parent().addClass("navItemActive");			
 		});
 	});
-	
+		
 	$("#filterQuery").onEnter(function(){
 		if($("#filterQuery").val() != ""){
 			$("#filterResult").html("35 <b>Search Results</b> for \"" + $("#filterQuery").val() + "\"");
@@ -24,4 +24,7 @@ $(document).ready(function(){
      };
 })(jQuery);
 
-
+function displayPanel(id){
+	$(".rightMenuTop").children().each(function(){if($(this).attr("id") != id) $(this).css("display", "none");});
+	$("#"+id).css("display","block");
+}

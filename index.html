@@ -12,31 +12,33 @@
 		<div class="navigationMenu leftPanel">
 			<div class="leftMenuTop"></div>
 			<ul class="navMenuList">
-				<li><a href="#"><img src="images/user_dp.png"/></a></li>
-				<li><a href="#"></a></li>
-				<li><a href="#"></a></li>
-				<li><a href="#"></a></li>
-				<li><a href="#"><img src="images/reviewer_dp.png"/></a></li>
-				<li><a href="#"><img src="images/user_dp.png"/></a></li>
+				<li><a href="#" onclick="displayPanel('')"><img src="images/user_dp.png"/></a></li>
+				<li><a href="#" onclick="displayPanel('')"></a></li>
+				<li><a href="#" onclick="displayPanel('')"></a></li>
+				<li><a href="#" onclick="displayPanel('')"></a></li>
+				<li><a href="#" onclick="displayPanel('')"><img src="images/reviewer_dp.png"/></a></li>
+				<li><a href="#" onclick="displayPanel('searchPanel')"><img src="images/user_dp.png"/></a></li>
 			</ul>
 		</div>
 		<div class="contentMenu rightPanel">
 			<div class="rightMenuTop">
-				<div class="filterSummary">
-					<output id="filterResult"/> 
-				</div>
-				<div>
-					<input type="text" id="filterQuery" class="searchContainer"/>
-					<ul class="filterCategories">
-						<li><input type="checkbox">Todos</input></li>
-						<li><input type="checkbox">Discussions</input></li>
-						<li><input type="checkbox">Files</input></li>
-						<li><input type="checkbox">Progress</input></li>
-						<li><input type="checkbox">Events</input></li>
-						<li><input type="checkbox">Team Members</input></li>
-					</ul>
-					
-					<div class="resultContent">
+				<div id="searchPanel" style="display:none">
+					<div class="filterSummary">
+						<output id="filterResult"/> 
+					</div>
+					<div>
+						<input type="text" id="filterQuery" class="searchContainer"/>
+						<ul class="filterCategories">
+							<li><input type="checkbox">Todos</input></li>
+							<li><input type="checkbox">Discussions</input></li>
+							<li><input type="checkbox">Files</input></li>
+							<li><input type="checkbox">Progress</input></li>
+							<li><input type="checkbox">Events</input></li>
+							<li><input type="checkbox">Team Members</input></li>
+						</ul>
+						
+						<div class="resultContent">
+						</div>
 					</div>
 				</div>
 			</div>
