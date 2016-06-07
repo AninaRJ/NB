@@ -104,3 +104,28 @@ html, body{
 .navItemActive img{
 	padding: 22px 17px !important;
 }
+
+.resultList li{
+	list-style-type: none;
+	border-bottom: 1px solid #f4f4f4;
+	border-left: 5px solid #e5e5e5;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	min-height: 70px;
+}
+
+.resultRecord{
+	padding: 10px 40px 10px 40px;
+}
+
+.timelineIcon{
+	margin-left: -20px;
+	margin-top: 2%;
+	margin-bottom: 30px;
+}
+
+.dateIcon{
+	margin-left: -50px;
+	background-color: #e5e5e5;
+	font-weight: bold;
+}

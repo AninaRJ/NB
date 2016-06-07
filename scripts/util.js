@@ -28,3 +28,4 @@ function displayPanel(id){
 	$(".rightMenuTop").children().each(function(){if($(this).attr("id") != id) $(this).css("display", "none");});
 	$("#"+id).css("display","block");
 }
+
