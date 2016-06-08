@@ -305,6 +305,7 @@ input[type=checkbox]:checked:after {
 		text-align: center;
 		width: 12%;
 		border-bottom: none;
+		border-right: none;
 	}
 	
 	.navMenuList li img{
@@ -362,6 +363,17 @@ input[type=checkbox]:checked:after {
 	   padding: 0;
        white-space: pre-wrap;
 	}
+	
+	.docAttachment, .xlsAttachment{
+		height: 100%;
+		word-break: break-word;
+		font-size: smaller;
+		padding-left: 0;
+	}
+	
+	.docAttachment .timelineLabel, .xlsAttachment .timelineLabel{
+		padding-top:20%;
+	}
 		
 	#filterResult{
 		padding: 0px;
@@ -370,9 +382,32 @@ input[type=checkbox]:checked:after {
 	
 	.resultList li {
 		width: 100%;
+		display: inline-flex;
 	}
 	
 	.resultList li div{
 		display: inline-block;
+		padding: 0px;
+	}
+	
+	.resultContent{
+		margin: 0px;
+		overflow-x: hidden;
+	}
+	
+	.timelineLabel{
+		display: block !important;
+	}
+	
+	.previewFileList img{
+		width: 90%;
+	}
+	
+	.previewFileList li{
+		display: block !important;
+	}
+	
+	.previewFileList li div{
+		margin-top : -30%
 	}
 }
