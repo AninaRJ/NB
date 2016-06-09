@@ -4,46 +4,45 @@
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" href="css/styles.css"/>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script type="text/javascript" src="scripts/util.js"></script>
 </head>
-<body>
+<body onload="setMainContainer()">
 	<div id="mainContainer">
 		<div class="navigationMenu leftPanel">
 			<div class="leftMenuTop"></div>
 			<ul class="navMenuList">
 				<li>
-					<a href="" onclick="displayPanel('')">
+					<a href="javascript:void(0)" onclick="displayPanel('', 0)">
 					<img src="images/user_dp.png" class="roundImage userImage"/>
 					<div class="activeNotificationBg">15</div>
 					</a>
 				</li>
 				<li>
-					<a href="" onclick="displayPanel('')">
+					<a href="javascript:void(0)" onclick="displayPanel('', 1)">
 					<img src="images/doc_icon_nav.png"/>
 					<div class="notificationBg"></div>
 					</a>
 				</li>
 				<li>
-					<a href="" onclick="displayPanel('')">
+					<a href="javascript:void(0)" onclick="displayPanel('', 2)">
 					<img src="images/notification_icon.png"/>
 					<div class="notificationBg"></div>
 					</a>
 				</li>
 				<li>
-					<a href="" onclick="displayPanel('')">
+					<a href="javascript:void(0)" onclick="displayPanel('', 3)">
 					<img src="images/calendar_icon.png"/>
 					<div class="notificationBg"></div>
 					</a>
 				</li>
 				<li>
-					<a href="" onclick="displayPanel('')">
+					<a href="javascript:void(0)" onclick="displayPanel('', 4)">
 					<img src="images/ladder_icon.png"/>
 					<div class="notificationBg"></div>
 					</a>
 				</li>
 				<li>
-					<a href="javascript:void(0)" onclick="displayPanel('searchPanel')">
+					<a href="javascript:void(0)" onclick="displayPanel('searchPanel', 5)">
 					<img src="images/search_icon.png"/>
 					<div class="notificationBg"></div>
 					</a>
@@ -57,7 +56,7 @@
 						<output id="filterResult"/> 
 					</div>
 					<div>
-						<input type="text" id="filterQuery" class="searchContainer"/>
+						<input type="text" id="filterQuery" class="searchContainer" onkeypress="if(event.keyCode == 13) displaySearchResults();"/>
 						<ul class="filterCategories">
 							<li><input type="checkbox">Todos</input></li>
 							<li><input type="checkbox">Discussions</input></li>

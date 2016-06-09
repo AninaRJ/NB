@@ -1,43 +1,48 @@
-$(document).ready(function(){
-	$(".navMenuList li").find("a").each(function(){
-		$(this).click(function(){
-			$(".navMenuList li").each(function(){
-				$(this).removeClass("navItemActive");	
-			});
-			$(this).parent().addClass("navItemActive");			
-		});
-	});
-		
-	$("#filterQuery").onEnter(function(){
-		if($("#filterQuery").val() != ""){
-			$("#filterResult").html("35 <b>Search Results</b> for \"" + $("#filterQuery").val() + "\"");
-			$(".resultContent").css("display", "block")
-			$(".filterCategories li").each(function(){
-				if($(this).html().indexOf('Todos') != -1
-					|| $(this).html().indexOf('Discussions') != -1
-					|| $(this).html().indexOf('Files') != -1)
-					{
-						$(this).find("input[type='checkbox']").prop("checked", true)
+function setMainContainer(){
+	document.getElementById("mainContainer").style.width = window.outerWidth
+	document.getElementById("mainContainer").style.height = window.outerHeight;
+}
+
+function displaySearchResults(){
+		if(document.getElementById("filterQuery").value != ""){
+			document.getElementById("filterResult").innerHTML = "35 <b>Search Results</b> for \"" + $("#filterQuery").val() + "\"";
+			document.getElementsByClassName("resultContent")[0].style.display = "block";
+			
+			var filterCategory = document.getElementsByClassName("filterCategories")[0];
+			var filterCategoryList = filterCategory.getElementsByTagName("li");
+			for(var i=0; i< filterCategoryList.length; i++){
+				if(filterCategoryList[i].innerHTML.indexOf('Todos') != -1
+					|| filterCategoryList[i].innerHTML.indexOf('Discussions') != -1
+					|| filterCategoryList[i].innerHTML.indexOf('Files') != -1){
+						filterCategoryList[i].getElementsByTagName("input")[0].checked = true;
 					}
-			});
+			}
 		}
-	});
+	};
+
+function addActiveClass(index){
+	var navigationList = document.getElementsByClassName("navMenuList")[0].getElementsByTagName("li");
+	for(var listItem = 0; listItem < navigationList.length; listItem++){
+		if(listItem != index){
+			navigationList[listItem].className = '';
+		}
+		else{
+			navigationList[listItem].className = "navItemActive";
+		}
+	}
+}	
 	
-	$("#mainContainer").css("width", $(window).width())
-	$("#mainContainer").css("height", $(window).height())
-});
-
-(function($) {
-    $.fn.onEnter = function(func) {
-        this.bind('keypress', function(e) {
-            if (e.keyCode == 13) func.apply(this, [e]);    
-        });               
-        return this; 
-     };
-})(jQuery);
-
-function displayPanel(id){
-	$(".rightMenuTop").children().each(function(){if($(this).attr("id") != id) $(this).css("display", "none");});
-	document.getElementById(id).style.display = 'block';
+function displayPanel(id, index){
+	if(id != ""){
+		var displaySections = document.getElementsByClassName("rightMenuTop")[0].childNodes;
+		for(var i=0;i <displaySections.length; i++){
+			if(displaySections[i].tagName == 'DIV'){
+				displaySections[i].style.display = "none";
+			}
+		}
+		
+		document.getElementById(id).style.display = 'block';
+	}
+	addActiveClass(index);
 }
 
