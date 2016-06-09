@@ -3,6 +3,10 @@ html, body{
 	font-family: "Trebuchet MS";
 }
 
+.highlightText{
+	background-color: #e9f8fb;
+}
+
 #mainContainer{
 	height: auto;
 	width: auto;
@@ -143,7 +147,11 @@ input[type=checkbox]:checked:after {
 	padding-bottom: 20px;
 	padding-top: 20px;
 	min-height: 70px;
-	width: 50%;
+	width: 90%;
+}
+
+.resultList li div.content{
+	width: 50% !important;
 }
 
 .previewFileList li{
@@ -278,6 +286,20 @@ input[type=checkbox]:checked:after {
 	display: inline-block;
 }
 
+.moreSection{
+	padding-left: 60px;
+    width: 100%;
+}
+
+.moreSection button{
+	width: 100%;
+    height: 40px;
+    font-weight: bold;
+    background-color: #f2f2f2;
+	border: #f2f2f2;
+	cursor: pointer;
+}
+
 @media only screen and (max-width: 768px) {
 	
 	#mainContainer{
@@ -296,6 +318,10 @@ input[type=checkbox]:checked:after {
 		width: 100%;
 		height: auto;
 		list-style-type: none;
+	}
+	
+	.navMenuList{
+		text-align: center;
 	}
 	
 	.navMenuList li {
@@ -325,10 +351,6 @@ input[type=checkbox]:checked:after {
 		width: 90%;
 	}
 	
-	.navItemActive img.userImage{
-		width: 18%;
-	}
-	
 	.userImage{
 		width: 60% !important;
 	}
@@ -340,12 +362,11 @@ input[type=checkbox]:checked:after {
 	
 	.activeNotificationBg {
 		background-size: 80px 60px;
-		margin-left: 6px;
+		margin-left: 0px !important;
 	}
 
 	.leftMenuTop{
-		background-color: #3cb1e6;
-		height: 40px;
+		display: none;
 	}
 
 	.rightMenuTop{
@@ -385,6 +406,10 @@ input[type=checkbox]:checked:after {
 		display: inline-flex;
 	}
 	
+	.resultList li div.content{
+		width: 100% !important;
+	}
+	
 	.resultList li div{
 		display: inline-block;
 		padding: 0px;
@@ -409,5 +434,10 @@ input[type=checkbox]:checked:after {
 	
 	.previewFileList li div{
 		margin-top : -30%
+	}
+	
+	.moreSection{
+		padding-left: 10% !important;
+		width: 80%;
 	}
 }
