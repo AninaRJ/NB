@@ -10,7 +10,6 @@ html, body{
 #mainContainer{
 	height: auto;
 	width: auto;
-	overflow-y: scroll;
 }
 
 .navigationMenu{
@@ -63,7 +62,14 @@ html, body{
 
 .filterCategories, .previewFileList{
 	white-space: nowrap;
-	padding-left: 15px;
+}
+
+.resultList{
+	margin: 0px;
+}
+
+.filterCategories{
+	padding: 0px;
 }
 
 #filterResult{
@@ -74,28 +80,26 @@ html, body{
 	display: inline-block;
 	font-size: 14px;
 	padding: 0px 5px 0px 5px;
+	cursor: pointer;
 }
 
-input[type=checkbox]{
-	margin-right: 10px !important;
-	margin-left: 10px !important;
+.customCheckBox, .customCheckBox:after{
+	margin-right: 8px !important;
+    margin-left: 8px !important;
+    text-decoration: none;
+    content: url('../images/checkbox_unchecked.png');
+    border-radius: 30%;
+    vertical-align: middle;
 }
 
-input[type=checkbox]:checked:after {
-    content: '■';
-	-webkit-appearance: none;
-	appearance: none;
-	-moz-appearance: none;
-	color: #3cb1e6;
-    display: inline-block;
-	text-align:center;
-    width: 10px;
-    font-size: 18px;
-	vertical-align: middle;
-	margin-top: -8px;
-	padding-left: 5%;
+.customCheckBoxChecked, .customCheckBoxChecked:after{
+	margin-right: 8px !important;
+    margin-left: 8px !important;
+    text-decoration: none;
+    content: url('../images/checkbox_checked.png');
+    border-radius: 30%;
+    vertical-align: middle;
 }
-
 
 .resultContent{
 	background-color: #ffffff;
@@ -173,6 +177,7 @@ input[type=checkbox]:checked:after {
 	background-color: #e5e5e5;
 	font-weight: bold;
 	font-size: 12px;
+	display: inline-block;
 }
 
 .docAttachment{
@@ -329,7 +334,8 @@ input[type=checkbox]:checked:after {
 		padding: 4px;
 		vertical-align: middle;
 		text-align: center;
-		width: 12%;
+		width: auto;
+		max-width: 12%;
 		border-bottom: none;
 		border-right: none;
 	}
@@ -385,6 +391,10 @@ input[type=checkbox]:checked:after {
        white-space: pre-wrap;
 	}
 	
+	.filterCategories li, .previewFileList li{
+		white-space: normal;
+	}
+	
 	.docAttachment, .xlsAttachment{
 		height: 100%;
 		word-break: break-word;
@@ -399,6 +409,7 @@ input[type=checkbox]:checked:after {
 	#filterResult{
 		padding: 0px;
 		white-space: pre-wrap;
+		font-size: 90%;
 	}
 	
 	.resultList li {
@@ -432,12 +443,12 @@ input[type=checkbox]:checked:after {
 		display: block !important;
 	}
 	
-	.previewFileList li div{
-		margin-top : -30%
-	}
-	
 	.moreSection{
 		padding-left: 10% !important;
 		width: 80%;
+	}
+	
+	.dateIcon{
+		margin-left: -30px;
 	}
 }

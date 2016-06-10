@@ -58,12 +58,36 @@
 					<div>
 						<input type="text" id="filterQuery" class="searchContainer" onkeypress="if(event.keyCode == 13) displaySearchResults();"/>
 						<ul class="filterCategories">
-							<li><input type="checkbox">Todos</input></li>
-							<li><input type="checkbox">Discussions</input></li>
-							<li><input type="checkbox">Files</input></li>
-							<li><input type="checkbox">Progress</input></li>
-							<li><input type="checkbox">Events</input></li>
-							<li><input type="checkbox">Team Members</input></li>
+							<li>
+								<a onclick="toggleActive(0);">
+									<span class="customCheckBox"></span>Todos							
+								</a>
+							</li>
+							<li>
+								<a onclick="toggleActive(1);">
+									<span class="customCheckBox"></span>Discussions
+								</a>
+							</li>
+							<li>
+								<a onclick="toggleActive(2)">
+									<span class="customCheckBox"></span>Files
+								</a>
+							</li>
+							<li>
+								<a onclick="toggleActive(3)">
+									<span class="customCheckBox"></span>Progress
+								</a>
+							</li>
+							<li>
+								<a onclick="toggleActive(4)">
+									<span class="customCheckBox"></span>Events
+								</a>
+							</li>
+							<li>
+								<a onclick="toggleActive(5)">
+									<span class="customCheckBox"></span>Team Members
+								</a>
+							</li>
 						</ul>
 						
 						<div class="resultContent" style="display: none">

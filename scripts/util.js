@@ -4,6 +4,18 @@ function setMainContainer(){
 	document.getElementById("mainContainer").style.height = window.outerHeight;
 }
 
+function toggleActive(checkBoxIndex, overrideFlag){
+	var filterCategory = document.getElementsByClassName("filterCategories")[0];
+	var filterCategoryList = filterCategory.getElementsByTagName("li");
+	
+	if(filterCategoryList[checkBoxIndex].getElementsByClassName("customCheckBox")[0] != undefined){
+		filterCategoryList[checkBoxIndex].getElementsByClassName("customCheckBox")[0].className = "customCheckBoxChecked";
+	}
+	else if(filterCategoryList[checkBoxIndex].getElementsByClassName("customCheckBoxChecked")[0] != undefined){
+		filterCategoryList[checkBoxIndex].getElementsByClassName("customCheckBoxChecked")[0].className = "customCheckBox";
+	}
+}
+
 function displaySearchResults(){
 	var filterQuery = document.getElementById("filterQuery").value;
 	if(filterQuery != ""){
@@ -14,13 +26,14 @@ function displaySearchResults(){
 		// Checkboxes
 		var filterCategory = document.getElementsByClassName("filterCategories")[0];
 		var filterCategoryList = filterCategory.getElementsByTagName("li");
+		
 		for(var i=0; i< filterCategoryList.length; i++){
 			if(filterCategoryList[i].innerHTML.indexOf('Todos') != -1
 				|| filterCategoryList[i].innerHTML.indexOf('Discussions') != -1
 				|| filterCategoryList[i].innerHTML.indexOf('Files') != -1){
-					filterCategoryList[i].getElementsByTagName("input")[0].checked = true;
+					filterCategoryList[i].getElementsByClassName("customCheckBox")[0].className = "customCheckBoxChecked";
 				}
-		}
+		} 
 		
 		// Highlight filterQuery value in the entire of result
 		var resultContent = document.getElementsByClassName("resultContent")[0].innerHTML;
@@ -66,7 +79,9 @@ function resetValues(id){
 	var filterCategory = document.getElementsByClassName("filterCategories")[0];
 	var filterCategoryList = filterCategory.getElementsByTagName("li");
 	for(var i=0; i< filterCategoryList.length; i++){
-		filterCategoryList[i].getElementsByTagName("input")[0].checked = false;
+		if(filterCategoryList[i].getElementsByClassName("customCheckBoxChecked")[0] != undefined){
+			filterCategoryList[i].getElementsByClassName("customCheckBoxChecked")[0].className = "customCheckBox";
+		}
 	}
 }
 	
